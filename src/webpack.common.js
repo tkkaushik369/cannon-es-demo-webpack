@@ -7,7 +7,7 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{ from: path.resolve(__dirname, './client/index.html'), to: path.resolve(__dirname, '../dist/client') },
-				{ from: path.resolve(__dirname, './client/favicon.ico'), to: path.resolve(__dirname, '../dist/client') },
+				{ from: path.resolve(__dirname, './client/code.svg'), to: path.resolve(__dirname, '../dist/client') },
 			]
 		}),
 	],
