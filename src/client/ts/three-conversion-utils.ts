@@ -55,7 +55,7 @@ export function shapeToGeometry(shape: any, { flatShading = true } = {}) {
 			} */
 			const geometry = new THREE.BufferGeometry()
 			const points = []
-			const facesVertices = []
+			// const facesVertices = []
 			// Get vertices
 			for (let i = 0; i < shape.vertices.length; i++) {
 				const vertex = shape.vertices[i]
@@ -69,12 +69,13 @@ export function shapeToGeometry(shape: any, { flatShading = true } = {}) {
 				for (let j = 1; j < face.length - 1; j++) {
 					const b = face[j]
 					const c = face[j + 1]
-					facesVertices.push(new THREE.Vector3(points[a].x, points[a].y, points[a].z))
+					/* facesVertices.push(new THREE.Vector3(points[a].x, points[a].y, points[a].z))
 					facesVertices.push(new THREE.Vector3(points[b].x, points[b].y, points[b].z))
-					facesVertices.push(new THREE.Vector3(points[c].x, points[c].y, points[c].z))
+					facesVertices.push(new THREE.Vector3(points[c].x, points[c].y, points[c].z)) */
 				}
 			}
-			geometry.setFromPoints(facesVertices)
+			// geometry.setFromPoints(facesVertices)
+			geometry.setFromPoints(points)
 			geometry.computeBoundingSphere()
 
 			/* if (flatShading) {
@@ -91,7 +92,7 @@ export function shapeToGeometry(shape: any, { flatShading = true } = {}) {
 			// const geometry = new THREE.Geometry()
 			const geometry = new THREE.BufferGeometry()
 			const points = []
-			const facesVertices = []
+			// const facesVertices = []
 
 			const v0 = new CANNON.Vec3()
 			const v1 = new CANNON.Vec3()
@@ -113,13 +114,14 @@ export function shapeToGeometry(shape: any, { flatShading = true } = {}) {
 						)
 						const i = points.length - 3
 						// geometry.faces.push(new THREE.Face3(i, i + 1, i + 2))
+						/* facesVertices.push(new THREE.Vector3(points[i].x, points[i + 1].y, points[i + 2].z))
 						facesVertices.push(new THREE.Vector3(points[i].x, points[i + 1].y, points[i + 2].z))
-						facesVertices.push(new THREE.Vector3(points[i].x, points[i + 1].y, points[i + 2].z))
-						facesVertices.push(new THREE.Vector3(points[i].x, points[i + 1].y, points[i + 2].z))
+						facesVertices.push(new THREE.Vector3(points[i].x, points[i + 1].y, points[i + 2].z)) */
 					}
 				}
 			}
-			geometry.setFromPoints(facesVertices)
+			// geometry.setFromPoints(facesVertices)
+			geometry.setFromPoints(points)
 			geometry.computeBoundingSphere()
 
 			/* if (flatShading) {
@@ -136,7 +138,7 @@ export function shapeToGeometry(shape: any, { flatShading = true } = {}) {
 			// const geometry = new THREE.Geometry()
 			const geometry = new THREE.BufferGeometry()
 			const points = []
-			const facesVertices = []
+			// const facesVertices = []
 
 			const v0 = new CANNON.Vec3()
 			const v1 = new CANNON.Vec3()
@@ -150,11 +152,12 @@ export function shapeToGeometry(shape: any, { flatShading = true } = {}) {
 				)
 				const j = points.length - 3
 				// geometry.faces.push(new THREE.Face3(j, j + 1, j + 2))
+				/* facesVertices.push(new THREE.Vector3(points[j].x, points[j + 1].y, points[j + 2].z))
 				facesVertices.push(new THREE.Vector3(points[j].x, points[j + 1].y, points[j + 2].z))
-				facesVertices.push(new THREE.Vector3(points[j].x, points[j + 1].y, points[j + 2].z))
-				facesVertices.push(new THREE.Vector3(points[j].x, points[j + 1].y, points[j + 2].z))
+				facesVertices.push(new THREE.Vector3(points[j].x, points[j + 1].y, points[j + 2].z)) */
 			}
-			geometry.setFromPoints(facesVertices)
+			// geometry.setFromPoints(facesVertices)
+			geometry.setFromPoints(points)
 			geometry.computeBoundingSphere()
 
 			/* if (flatShading) {
